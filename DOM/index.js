@@ -134,8 +134,14 @@ boxes.forEach((box) => {
     });
 });
 
-// document.body.onclick = () => {
-//     console.log('Click !');  
-// };
+document.body.onclick = () => {
+    console.log('Click !');  
+}, true; // TRUE = usecapture (déclechement au début)
+// De base, c'est false, se déclanche à la fin (bubbling)
 
+//----------------------------------------------------------
 
+question.addEventListener("click", (e) => {
+    alert("Test ! ");
+    e.stopPropagation();
+})
